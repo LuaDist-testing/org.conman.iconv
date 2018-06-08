@@ -1,11 +1,11 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "org.conman.iconv"
-version = "2.0.0-1"
+version = "2.0.0-2"
 
 -- LuaDist source
 source = {
-  tag = "2.0.0-1",
+  tag = "2.0.0-2",
   url = "git://github.com/LuaDist-testing/org.conman.iconv.git"
 }
 -- Original source
@@ -38,9 +38,37 @@ dependencies =
   "lua >= 5.1, < 5.4"
 }
 
+local iconv_library_dependency_override =
+{
+  ICONV =
+  {
+    library = "iconv",
+  },
+}
+
+local iconv_library_module_override =
+{
+  modules =
+  {
+    iconv =
+    {
+      libraries = {"iconv"}
+    }
+  }
+}
+
 external_dependencies =
 {
-  ICONV = { header = "iconv.h" }
+  ICONV =
+  {
+    header = "iconv.h"
+  },
+  
+  platforms =
+  {
+    cygwin = iconv_library_dependency_override,
+    macosx = iconv_library_dependency_override,
+  }
 }
 
 build =
@@ -49,6 +77,17 @@ build =
   copy_directories = {},
   modules =
   {
-    ['org.conman.iconv'] = "iconv.c"
+    ['org.conman.iconv'] =
+    {
+      sources = "iconv.c",
+      incdirs = {"$(ICONV_INCDIR)"},
+      libdirs = {"$(ICONV_LIBDIR)"},
+    }
   },
+
+  platforms =
+  {
+    cygwin = iconv_library_module_override,
+    macosx = iconv_library_module_override,
+  }
 }
