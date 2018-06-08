@@ -1,22 +1,22 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "org.conman.iconv"
-version = "1.1.1-1"
+version = "2.0.0-1"
 
 -- LuaDist source
 source = {
-  tag = "1.1.1-1",
+  tag = "2.0.0-1",
   url = "git://github.com/LuaDist-testing/org.conman.iconv.git"
 }
 -- Original source
 -- source =
 -- {
---   url = "https://raw.github.com/spc476/lua-conmanorg/iconv-1.1.1/src/iconv.c"
+--   url = "https://raw.github.com/spc476/lua-conmanorg/iconv-2.0.0/src/iconv.c"
 -- }
 
 description =
 {
-  homepage = "https://github.com/spc476/lua-conmanorg/blob/iconv-1.1.1/src/iconv.c",
+  homepage = "https://github.com/spc476/lua-conmanorg/blob/iconv-2.0.0/src/iconv.c",
   maintainer = "Sean Conner <sean@conman.org>",
   license    = "LGPL",
   summary    = "Lua wrapper for IConv",
@@ -25,7 +25,7 @@ description =
 
 	iconv = require "org.conman.iconv"
 
-	trans = iconv.open("iso-8859-1","utf-8") -- from ISO-8869-1 to UTF-8
+	trans = iconv("utf-8","iso-8859-1") -- from ISO-8869-1 to UTF-8
 
 	x     = This is \255 test" -- in ISO-8869-1
 
@@ -35,7 +35,7 @@ description =
 
 dependencies =
 {
-  "lua ~> 5.1"
+  "lua >= 5.1, < 5.4"
 }
 
 external_dependencies =
