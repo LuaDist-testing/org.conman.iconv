@@ -1,22 +1,22 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "org.conman.iconv"
-version = "1.1.0-1"
+version = "1.1.1-1"
 
 -- LuaDist source
 source = {
-  tag = "1.1.0-1",
+  tag = "1.1.1-1",
   url = "git://github.com/LuaDist-testing/org.conman.iconv.git"
 }
 -- Original source
 -- source =
 -- {
---   url = "https://raw.github.com/spc476/lua-conmanorg/iconv-1.1.0/src/iconv.c"
+--   url = "https://raw.github.com/spc476/lua-conmanorg/iconv-1.1.1/src/iconv.c"
 -- }
 
 description =
 {
-  homepage = "https://github.com/spc476/lua-conmanorg/blob/iconv-1.1.0/src/iconv.c",
+  homepage = "https://github.com/spc476/lua-conmanorg/blob/iconv-1.1.1/src/iconv.c",
   maintainer = "Sean Conner <sean@conman.org>",
   license    = "LGPL",
   summary    = "Lua wrapper for IConv",
